@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Mini_project_Note_App_np.Pages.NotePage">
+    <Grid RowDefinitions="Auto, * , Auto" Padding="12" Background="#202020" RowSpacing="36">
+    <!-- A horizontal layout for two action buttons: Back and Delete. Positioned at the bottom of the page. -->
+        <HorizontalStackLayout HorizontalOptions="Start" Spacing="16" Grid.Row="0">
+
+            <!-- Back button: Navigates back to the previous page and applies any note changes made. -->
+            <Button Text="⬅ Back"
+                        HorizontalOptions="Start"
+                        WidthRequest="80"
+                        BackgroundColor="#202020"
+                        Clicked="OnBackButtonClicked"/>
+
+        </HorizontalStackLayout>
+    
+        <VerticalStackLayout Grid.Row="1"
+                              HorizontalOptions="Center">
+            <ScrollView>
+                <VerticalStackLayout Padding="12" Spacing="36">
+
+                    <!-- Entry field for the note's title with specific text color and placeholder text. -->
+                    <Entry x:Name="titleEntry"
+                               HorizontalOptions="Center"
+                               TextColor="White"
+                               FontSize="48"
+                               Placeholder="Title" />
+
+                    <!-- Larger text area (Editor) for the note's main content. Uses a predefined style and has specific height. -->
+                    <Editor x:Name="contentEditor"
+                               HorizontalOptions="Center"
+                                Placeholder="Enter your response here"
+                                HeightRequest="250" 
+                               TextColor="White"
+                            />
+                </VerticalStackLayout>
+            </ScrollView>
+        </VerticalStackLayout>
+    </Grid>
+</ContentPage>
